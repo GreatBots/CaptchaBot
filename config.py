@@ -5,8 +5,8 @@ import os
 
 class Config(object):
     # get it from my.telegram.org
-    APP_ID = os.environ.get("APP_ID", 2428507)
-    API_HASH = os.environ.get("API_HASH", "80353e5f8ce893d1366e804c0375c919")
+    APP_ID = os.environ.get("APP_ID", 3343389)
+    API_HASH = os.environ.get("API_HASH", "3a20ed9427d8b5c50577c99212e9380b")
     # Get it from @botfather
     BOT_TOKEN = os.environ.get("BOT_TOKEN", "6024285748:AAFu96JwT-DKzVIOQ0QyCDj7ga7K5KEyjbI")
     # Leave this defualt
