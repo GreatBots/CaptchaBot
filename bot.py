@@ -18,9 +18,13 @@ from helper.captcha_maker import number_, emoji_
 app = Client(Config.SESSION_NAME, api_id=Config.APP_ID, api_hash=Config.API_HASH, bot_token=Config.BOT_TOKEN)
 # Local database for saving user info
 LocalDB = {}
-ch_markup = InlineKeyboardMarkup([InlineKeyboardButton(text="Add Me To Your Group", url="https://t.me/Captcha_iBot?startgroup=botstart")],
-                                    [InlineKeyboardButton(text="Support Group", url="https://t.me/DevsChats")])
-
+ch_markup = InlineKeyboardMarkup(
+        [[
+            InlineKeyboardButton('Add Me To Your Group', url='https://t.me/Captcha_iBot?startgroup=botstart')
+        ], [
+            InlineKeyboardButton('Support Group', url='https://t.me/DevsChats')
+        ]]
+    )
 
 @app.on_chat_member_updated()
 async def check_chat_captcha(client, message):
