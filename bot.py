@@ -18,8 +18,8 @@ from helper.captcha_maker import number_, emoji_
 app = Client(Config.SESSION_NAME, api_id=Config.APP_ID, api_hash=Config.API_HASH, bot_token=Config.BOT_TOKEN)
 # Local database for saving user info
 LocalDB = {}
-ch_markup = InlineKeyboardMarkup([[InlineKeyboardButton(text="Updates Channel", url="https://t.me/Universal_Projects"),
-                                    InlineKeyboardButton(text="Support Group", url="https://t.me/JV_Community")]])
+ch_markup = InlineKeyboardMarkup([[InlineKeyboardButton(text="Add Me To Your Group", url="https://t.me/Universal_Projects"),
+                                    InlineKeyboardButton(text="Support Group", url="https://t.me/DevsChats")]])
 
 
 @app.on_chat_member_updated()
@@ -92,13 +92,13 @@ async def add_chat(bot, message):
         
 @app.on_message(filters.command(["help"]))
 async def start_chat(bot, message):
-    await message.reply_text(text="/captcha - turn on captcha : There are two types of captcha\n/remove - turn off captcha\n\nfor more help ask in my support group",
+    await message.reply_text(text="Need Help ❓️\n\nCommands :\n/captcha - turn on captcha : There are two types of captcha\n/remove - turn off captcha\n\nfor more help ask in my support group",
                              reply_markup=ch_markup)
     
 
 @app.on_message(filters.command(["start"]))
 async def help_chat(bot, message):
-    await message.reply_text(text="I can help you to protect your group from bots using captcha.\n\nCheck /help to know more.",
+    await message.reply_text(text="<b>👋Hi,</b> I am captcha bot.\n\nI can protect your groups from bots and spammers.If someone <b>new joins the group</b> I will mute him and ask him to solve an <b>Emoji Captcha</b> and if he/she solves it I will unmute him.\n\nCheck /help to know more.",
                              reply_markup=ch_markup)
     
 
