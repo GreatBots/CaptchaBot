@@ -8,7 +8,7 @@ class Config(object):
     APP_ID = os.environ.get("APP_ID", 2428507)
     API_HASH = os.environ.get("API_HASH", "80353e5f8ce893d1366e804c0375c919")
     # Get it from @botfather
-    BOT_TOKEN = os.environ.get("BOT_TOKEN", "6135047149:AAFmGWUfYwv5UuVtSZ9Ew2ZymECOz2DmCn4")
+    BOT_TOKEN = os.environ.get("BOT_TOKEN", "6024285748:AAFu96JwT-DKzVIOQ0QyCDj7ga7K5KEyjbI")
     # Leave this defualt
     SESSION_NAME = os.environ.get("SESSION_NAME", "Captcha_iBot")
     # get it from https://cloud.mongodb.com 
