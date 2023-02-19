@@ -1,0 +1,45 @@
+{
+    "name": "A Telegram Captcha Bot by @AbirHasan2005.",
+    "description": "A Telegram Bot for verifying new group members by Emojis Captcha. Made by @AbirHasan2005.",
+    "keywords": [
+        "telegram",
+        "emoji",
+        "captcha",
+        "bot"
+    ],
+    "repository": "https://github.com/GreatBots/CaptchaBot",
+    "website": "https://telegram.dog/Captcha_ibot",
+    "success_url": "https://t.me/Captcha_iBot",
+    "env": {
+        "APP_ID": {
+            "description": "Get this value from my.telegram.org or @TeleORG_Bot"
+        },
+        "API_HASH": {
+            "description": "Get this value from my.telegram.org or @TeleORG_Bot"
+        },
+        "BOT_TOKEN": {
+            "description": "Get this from @BotFather"
+        },
+        "MONGODB_URI": {
+            "description": "MongoDB URI for Saving Chat Settings. Video Tutorial Here: https://www.youtube.com/watch?v=aXlF80Cn7iU"
+        },
+        "SESSION_NAME": {
+            "description": "A Bot Session Name without Space.",
+            "required": false
+        },
+        "SUDO_USERS": {
+            "description": "Your Telegram Group ID where the bot will ask for verify by Captcha."
+        }
+    },
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        }
+    ],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    }
+}
