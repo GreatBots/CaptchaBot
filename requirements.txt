@@ -1,6 +1,6 @@
 pillow
 captcha
-pyrogram
+pyrogram==1.4.16
 asyncio
 dnspython
 pymongo
