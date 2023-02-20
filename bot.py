@@ -147,7 +147,6 @@ async def cb_handler(bot, query):
         if chat:
             c = chat["captcha"]
             markup = [[],[],[]]
-            if c == "N":
                 print("processing number captcha")
                 await query.answer("Creating captcha for you")
                 data_ = number_()
@@ -167,29 +166,7 @@ async def cb_handler(bot, query):
                     markup[2].append(InlineKeyboardButton(f"{list_[count]}", callback_data=f"jv_{chat_id}_{user_id}_{list_[count]}"))
                     count += 1
 
-            elif c == "E":
-                print("processing img captcha")
-                await query.answer("Creating captcha for you")
-                data_ = emoji_()
-                _numbers = data_["answer"]
-                list_ = data_["list"]
-                count = 0
-                tot = 3
-                for i in range(5):
-                    markup[0].append(InlineKeyboardButton(f"{list_[count]}", callback_data=f"jv_{chat_id}_{user_id}_{list_[count]}"))
-                    count += 1
-                for i in range(5):
-                    markup[1].append(InlineKeyboardButton(f"{list_[count]}", callback_data=f"jv_{chat_id}_{user_id}_{list_[count]}"))
-                    count += 1
-                for i in range(5):
-                    markup[2].append(InlineKeyboardButton(f"{list_[count]}", callback_data=f"jv_{chat_id}_{user_id}_{list_[count]}"))
-                    count += 1
-                LocalDB[int(user_id)] = {"answer": _numbers, "list": list_, "mistakes": 0, "captcha": "E", "total":tot, "msg_id": None}
-            c = LocalDB[query.from_user.id]['captcha']
-            if c == "N":
-                typ_ = "number"
-            if c == "E":
-                typ_ = "emoji"
+            typ_ = "number"
             msg = await bot.send_photo(chat_id=chat_id,
                             photo=data_["captcha"],
                             caption=f"{query.from_user.mention} Please click on each {typ_} button that is showen in image, {tot} mistakes are allowed.",
